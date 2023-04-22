@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${SPRING_JDBC_HOST:localhost}:${SPRING_JDBC_PORT:3306}/EmoTrack?createDatabaseIfNotExist=true&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: mypassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    change-log: classpath:liquibase/changelog.xml
+  jpa:
+    hibernate.ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
